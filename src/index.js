@@ -13,9 +13,9 @@ export default function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Giveaway />} />
-        <Route path="/maikohboulder" element={<MaikohBoulder />} />
-        <Route path="/maikohdenver" element={<MaikohDenver />} />
-        <Route path="/thefitter" element={<TheFitter />} />
+        <Route path="/maikoh-boulder" element={<MaikohBoulder />} />
+        <Route path="/maikoh-denver" element={<MaikohDenver />} />
+        <Route path="/the-fitter" element={<TheFitter />} />
       </Routes>
     </BrowserRouter>
   );
