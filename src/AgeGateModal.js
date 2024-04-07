@@ -48,7 +48,7 @@ const AgeGateModal = () => {
                 <input
                   type="date"
                   id="age"
-                  className="border-2 border-gray-300 p-2 rounded-xl"
+                  className="border-2 border-gray-300 p-2 rounded-xl mx-auto"
                   onChange={(event) => setSelectedDate(event.target.value)}
                 />
                 <br />
