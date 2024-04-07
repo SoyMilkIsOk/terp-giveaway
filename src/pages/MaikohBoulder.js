@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 import "../index.css";
 import profilePicture from "../profile.png";
 import maikohPicture from "../maikoh.png";
@@ -6,6 +7,7 @@ import { Instagram } from "lucide-react";
 import AgeGateModal from "../AgeGateModal";
 
 const MaikohBoulder = () => {
+  const [followed, setFollowed] = useState(false);
   return (
     <>
       <AgeGateModal />
@@ -39,7 +41,14 @@ const MaikohBoulder = () => {
               In order to enter the giveaway at this location, you must follow
               Maikoh.
             </p>
-            <button className="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 font-bold rounded-full mx-auto">
+            <button
+              className={`${
+                followed
+                  ? "bg-green-400 px-4 py-2 rounded-full my-auto mx-0 sm:mx-auto text-white font-bold"
+                  : "bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 font-bold rounded-full mx-auto"
+              }`}
+              onClick={() => setFollowed(~followed)}
+            >
               <a
                 href="https://www.instagram.com/maikohofficial/"
                 target="_blank"
@@ -47,7 +56,7 @@ const MaikohBoulder = () => {
               >
                 <div className="flex flex-row justify-center items-center space-x-2">
                   <p>Follow Maikoh Holistics</p>
-                  <Instagram />
+                  {!followed ? <Instagram /> : <span>✔</span>}
                 </div>
               </a>
             </button>

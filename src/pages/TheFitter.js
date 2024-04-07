@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 import "../index.css";
 import profilePicture from "../profile.png";
 import fitterPicture from "../fitter.png";
@@ -6,6 +7,7 @@ import { Instagram } from "lucide-react";
 import AgeGateModal from "../AgeGateModal";
 
 const TheFitter = () => {
+  const [followed, setFollowed] = useState(false);
   return (
     <>
         <AgeGateModal />
@@ -36,7 +38,14 @@ const TheFitter = () => {
           <p className="max-w-md sm:max-w-xl mx-auto text-center">
             In order to enter the giveaway at this location, you must follow The Fitter.
           </p>
-          <button className="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded-full mx-auto font-bold">
+          <button
+              className={`${
+                followed
+                  ? "bg-green-400 px-4 py-2 rounded-full my-auto mx-0 sm:mx-auto text-white font-bold"
+                  : "bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 font-bold rounded-full mx-auto"
+              }`}
+              onClick={() => setFollowed(~followed)}
+            >
             <a
               href="https://www.instagram.com/fitterofficial/"
               target="_blank"
@@ -44,7 +53,7 @@ const TheFitter = () => {
             >
               <div className="flex flex-row justify-center items-center space-x-2">
                 <p>Follow The Fitter</p>
-                <Instagram />
+                {!followed ? <Instagram /> : <span>✔</span>}
               </div>
             </a>
           </button>
