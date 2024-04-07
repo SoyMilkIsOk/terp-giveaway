@@ -3,9 +3,12 @@ import "../index.css";
 import profilePicture from "../profile.png";
 import fitterPicture from "../fitter.png";
 import { Instagram } from "lucide-react";
+import AgeGateModal from "../AgeGateModal";
 
 const TheFitter = () => {
   return (
+    <>
+        <AgeGateModal />
     <div className="App">
       <div className="container mt-20 mx-auto p-4 bg-gray-100 sm:max-w-xl max-w-xs rounded-2xl shadow-lg">
         <div className="flex flex-row justify-center space-x-8 mt-8">
@@ -74,6 +77,7 @@ const TheFitter = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

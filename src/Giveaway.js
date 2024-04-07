@@ -4,9 +4,14 @@ import profilePicture from "./profile.png";
 import maikohPicture from "./maikoh.png";
 import fitterPicture from "./fitter.png";
 import { Instagram } from "lucide-react";
+import AgeGateModal from "./AgeGateModal";
 
 const Giveaway = () => {
+
   return (
+    <>
+    <AgeGateModal />
+    {/* main giveaway */}
     <div className="App">
       <div className="container mt-20 mx-auto p-4 bg-gray-100 sm:max-w-xl max-w-xs rounded-2xl shadow-lg">
         <img
@@ -78,6 +83,7 @@ const Giveaway = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 
