@@ -4,7 +4,7 @@ import "./index.css";
 import profilePicture from "./profile.png";
 import maikohPicture from "./maikoh.png";
 import fitterPicture from "./fitter.png";
-import { Instagram } from "lucide-react";
+import { Instagram, Check } from "lucide-react";
 import AgeGateModal from "./AgeGateModal";
 
 const Giveaway = () => {
@@ -58,7 +58,7 @@ const Giveaway = () => {
               >
                 <div className="flex flex-row justify-center items-center space-x-2">
                   <p>Follow Terpscoops</p>
-                  {!followed ? <Instagram /> : <span>✔</span>}
+                  {!followed ? <Instagram /> : <Check />}
                 </div>
               </a>
             </button>
