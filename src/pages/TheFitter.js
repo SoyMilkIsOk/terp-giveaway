@@ -47,7 +47,7 @@ const TheFitter = () => {
               onClick={() => setFollowed(~followed)}
             >
             <a
-              href="https://www.instagram.com/fitterofficial/"
+              href="https://www.instagram.com/thefitterboulder"
               target="_blank"
               rel="noreferrer"
             >

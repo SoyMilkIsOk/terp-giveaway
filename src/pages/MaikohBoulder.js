@@ -50,7 +50,7 @@ const MaikohBoulder = () => {
               onClick={() => setFollowed(~followed)}
             >
               <a
-                href="https://www.instagram.com/maikohofficial/"
+                href="https://www.instagram.com/maikohholistics/"
                 target="_blank"
                 rel="noreferrer"
               >
