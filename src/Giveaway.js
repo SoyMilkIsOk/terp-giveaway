@@ -13,7 +13,7 @@ const Giveaway = () => {
     <AgeGateModal />
     {/* main giveaway */}
     <div className="App">
-      <div className="container mt-20 mx-auto p-4 bg-gray-100 sm:max-w-xl max-w-xs rounded-2xl shadow-lg">
+      <div className="container mt-8 sm:mt-20 mb-4 mx-auto p-4 bg-gray-100 sm:max-w-xl max-w-xs rounded-2xl shadow-lg">
         <img
           src={profilePicture}
           className="terp-logo w-20 h-20 rounded-full my-8 mx-auto"
