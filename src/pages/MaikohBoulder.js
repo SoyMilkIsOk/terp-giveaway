@@ -8,6 +8,7 @@ import AgeGateModal from "../AgeGateModal";
 
 const MaikohBoulder = () => {
   const [followed, setFollowed] = useState(false);
+  const [followed2, setFollowed2] = useState(false);
   return (
     <>
       <AgeGateModal />
@@ -38,8 +39,7 @@ const MaikohBoulder = () => {
           </div>
           <div className="flex flex-col justify-center space-y-4 my-8 text-center">
             <p className="max-w-md sm:max-w-2xl mx-auto text-center">
-              In order to enter the giveaway at this location, you must follow
-              Maikoh.
+              Each page you follow is an entry to win a giveaway! <br/> Follow both pages for a chance to win free weed or a bong + grinder!
             </p>
             <button
               className={`${
@@ -60,10 +60,30 @@ const MaikohBoulder = () => {
                 </div>
               </a>
             </button>
+            {/* second button for terpscoops page */}
+            <button
+              className={`${
+                followed2
+                  ? "bg-green-400 px-4 py-2 rounded-full my-auto mx-0 sm:mx-auto text-white font-bold"
+                  : "bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 font-bold rounded-full mx-auto"
+              }`}
+              onClick={() => setFollowed2(~followed2)}
+            >
+              <a
+                href="https://www.instagram.com/terpscoops/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <div className="flex flex-row justify-center items-center space-x-2">
+                  <p>Follow Terpscoops</p>
+                  {!followed2 ? <Instagram /> : <Check />}
+                </div>
+              </a>
+            </button>
           </div>
           <div className="flex flex-col justify-center space-y-4 my-8 text-center">
             <p className="max-w-md sm:max-w-xl mx-auto text-center">
-              To confirm entry, please provide your Instagram username below.
+              Enter your Instagram username below to complete your entry!
             </p>
             <form
               className="Form w-full justify-center items-center"

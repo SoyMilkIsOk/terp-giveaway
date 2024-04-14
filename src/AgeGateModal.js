@@ -2,36 +2,20 @@ import React, { useState } from "react";
 import { useCookies } from "react-cookie";
 
 const AgeGateModal = () => {
-  const [selectedDate, setSelectedDate] = useState("");
   const [showModal, setShowModal] = useState(true);
 
   const [cookies, setCookie] = useCookies(["ageGate"]);
 
-  const handleSubmit = (e) => {
-    const calculatedAge = calculateAge(selectedDate);
-    e.preventDefault();
-    if (calculatedAge >= 21) {
-      setCookie("ageGate", true, {
-        path: "/",
-        expires: new Date(Date.now() + 2592000000),
-      });
-      if (cookies.ageGate) {
-        setShowModal(false);
-      }
-    } else {
-      alert("You must be at least 21 years old to proceed.");
-    }
+  const handleYes = () => {
+    setCookie("ageGate", true, {
+      path: "/",
+      expires: new Date(Date.now() + 2592000000),
+    });
+    setShowModal(false);
   };
 
-  const calculateAge = (date) => {
-    const today = new Date();
-    const birthDate = new Date(date);
-    let age = today.getFullYear() - birthDate.getFullYear();
-    const m = today.getMonth() - birthDate.getMonth();
-    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
-      age--;
-    }
-    return age;
+  const handleNo = () => {
+    window.location.href = "https://www.google.com";
   };
 
   return (
@@ -42,24 +26,26 @@ const AgeGateModal = () => {
             <h1 className="text-3xl font-bold text-gray-800">
               Age Verification
             </h1>
-            <form onSubmit={handleSubmit}>
-              <div className="flex flex-col justify-center space-y-4 my-8 text-center">
-                <label htmlFor="age">Please enter your age:</label>
-                <input
-                  type="date"
-                  id="age"
-                  className="border-2 border-gray-300 p-2 rounded-xl mx-auto"
-                  onChange={(event) => setSelectedDate(event.target.value)}
-                />
-                <br />
+            <div className="flex flex-col justify-center space-y-4 mt-8 text-center">
+              <label htmlFor="age">Are you 21 or older?</label>
+              <br />
+              <div className="flex justify-center space-x-4">
                 <button
-                  type="submit"
+                  type="button"
+                  onClick={handleYes}
                   className="bg-green-400 px-2 py-1 rounded-full w-1/2 mx-auto sm:mx-auto text-white font-bold"
                 >
-                  Submit
+                  Yes
+                </button>
+                <button
+                  type="button"
+                  onClick={handleNo}
+                  className="bg-red-400 px-2 py-1 rounded-full w-1/2 mx-auto sm:mx-auto text-white font-bold"
+                >
+                  No
                 </button>
               </div>
-            </form>
+            </div>
           </div>
         </div>
       )}
