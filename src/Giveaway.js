@@ -1,14 +1,14 @@
 import React from "react";
-import { useState } from "react";
+// import { useState } from "react";
 import "./index.css";
 import profilePicture from "./profile.png";
-import maikohPicture from "./maikoh.png";
-import fitterPicture from "./fitter.png";
-import { Instagram, Check } from "lucide-react";
+// import maikohPicture from "./maikoh.png";
+// import fitterPicture from "./fitter.png";
+// import { Instagram, Check } from "lucide-react";
 import AgeGateModal from "./AgeGateModal";
 
 const Giveaway = () => {
-  const [followed, setFollowed] = useState(false);
+  // const [followed, setFollowed] = useState(false);
   return (
     <>
       <AgeGateModal />
